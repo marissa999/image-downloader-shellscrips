@@ -7,6 +7,5 @@ while read line; do
 	xml=$(curl -s $apiurl)
 	fileUrlWithEnd=${xml##*file_url=\"}
 	fileUrl=${fileUrlWithEnd%%\"*}
-	echo $fileUrl
 	curl -s $fileUrl -O
 done < gelbooru.txt
